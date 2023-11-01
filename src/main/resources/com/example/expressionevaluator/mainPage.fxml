@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity"
+            prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/20.0.1"
+            fx:controller="com.example.expressionevaluator.MainPageController">
+    <cursor>
+        <Cursor fx:constant="CROSSHAIR"/>
+    </cursor>
+    <ImageView cache="true" cacheHint="QUALITY" fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true"
+               preserveRatio="true">
+        <effect>
+            <BoxBlur/>
+        </effect>
+        <Image url="@wallpaper.jpg"/>
+    </ImageView>
+    <TextField fx:id="resultText" accessibleRole="TEXT_AREA" editable="false" focusTraversable="false"
+               layoutX="412.0" layoutY="527.0" mouseTransparent="true" pickOnBounds="false" prefHeight="167.0"
+               prefWidth="432.0" style="-fx-background-color: transparent;" text="Result: ">
+        <font>
+            <Font name="Segoe UI Bold Italic" size="33.0"/>
+        </font>
+        <effect>
+            <SepiaTone/>
+        </effect>
+        <opaqueInsets>
+            <Insets/>
+        </opaqueInsets>
+    </TextField>
+    <Text layoutX="461.0" layoutY="94.0" strokeWidth="0.0" text="Expression Evaluator" textAlignment="CENTER"
+          underline="true" wrappingWidth="335.33331298828125">
+        <font>
+            <Font name="System Bold Italic" size="37.0"/>
+        </font>
+    </Text>
+    <Text layoutX="534.0" layoutY="213.0" stroke="#00000002" strokeType="OUTSIDE" strokeWidth="0.0"
+          text="Enter expression:" textAlignment="CENTER" wrappingWidth="185.5885467529297">
+        <font>
+            <Font name="System Bold Italic" size="28.0"/>
+        </font>
+    </Text>
+    <ImageView fitHeight="401.0" fitWidth="877.0" layoutX="185.0" layoutY="218.0" pickOnBounds="true">
+        <effect>
+            <BoxBlur height="8.0" width="11.0"/>
+        </effect>
+        <Image url="@expressionBackground.png"/>
+    </ImageView>
+    <TextField fx:id="mainExpressionTextField" alignment="CENTER" blendMode="MULTIPLY" cacheShape="false"
+               centerShape="false" layoutX="297.0" layoutY="350.0" onKeyPressed="#computeResult"
+               onKeyTyped="#checkFontSizeKeyTyped" onMouseClicked="#checkFontSizeMouseClicked" prefHeight="84.0"
+               prefWidth="649.0" scaleShape="false" style="-fx-background-color: transparent; -fx-text-fill: cyan;">
+        <effect>
+            <Blend mode="COLOR_DODGE"/>
+        </effect>
+        <font>
+            <Font size="40.0"/>
+        </font>
+    </TextField>
+    <ImageView fx:id="imageEmoji" fitHeight="74.0" fitWidth="99.0" layoutX="1051.0" layoutY="291.0"
+               pickOnBounds="true" preserveRatio="true">
+        <Image url="@smileyEmoji.png"/>
+    </ImageView>
+</AnchorPane>
